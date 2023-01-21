@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="system">
+      <UniqueIdentifier>{22dd8095-74f9-46df-81a1-36675a040b1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="system\system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="Saisho.cpp" />
+    <ClCompile Include="Daichi.cpp" />
+    <ClCompile Include="Oresiten.cpp" />
+    <ClCompile Include="Ikusa00.cpp" />
+    <ClCompile Include="MakeUI.cpp" />
+    <ClCompile Include="Testshot.cpp" />
+    <ClCompile Include="EnemyN.cpp" />
+    <ClCompile Include="Title.cpp" />
+    <ClCompile Include="OverGame.cpp" />
+    <ClCompile Include="NowLo.cpp" />
+    <ClCompile Include="Heart.cpp" />
+    <ClCompile Include="Ikusa01.cpp" />
+    <ClCompile Include="EnemyT.cpp" />
+    <ClCompile Include="TestshotE.cpp" />
+    <ClCompile Include="TheSky.cpp" />
+    <ClCompile Include="IkusaT.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="IkusaW.cpp" />
+    <ClCompile Include="Kekka.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="system\system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="Saisho.h" />
+    <ClInclude Include="Daichi.h" />
+    <ClInclude Include="Oresiten.h" />
+    <ClInclude Include="Ikusa00.h" />
+    <ClInclude Include="MakeUI.h" />
+    <ClInclude Include="Testshot.h" />
+    <ClInclude Include="EnemyN.h" />
+    <ClInclude Include="Title.h" />
+    <ClInclude Include="OverGame.h" />
+    <ClInclude Include="NowLo.h" />
+    <ClInclude Include="Heart.h" />
+    <ClInclude Include="Ikusa01.h" />
+    <ClInclude Include="EnemyT.h" />
+    <ClInclude Include="TestshotE.h" />
+    <ClInclude Include="TheSky.h" />
+    <ClInclude Include="IkusaT.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="IkusaW.h" />
+    <ClInclude Include="Kekka.h" />
+  </ItemGroup>
+</Project>
