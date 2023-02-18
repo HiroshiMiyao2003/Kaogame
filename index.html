@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README_clone.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E7%9B%AE%E6%AC%A1">目次</h1>
+<ol>
+<li><a href="#anchor1">初めに</a></li>
+<li><a href="#anchor2">こだわりポイント1</a></li>
+<li><a href="#anchor3">こだわりポイント2</a></li>
+<li><a href="#anchor4">こだわりポイント3</a></li>
+<li><a href="#anchor5">こだわりポイント4</a></li>
+<li><a href="#anchor6">まとめ</a></li>
+</ol>
+<p><a id="anchor1"></a></p>
+<h1 id="%E5%88%9D%E3%82%81%E3%81%AB">初めに</h1>
+<h3 id="%E3%81%8B%E3%81%A4%E3%81%A6%E7%A7%81%E3%81%AF3ds%E3%81%AB%E5%86%85%E8%94%B5%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A8%E3%81%82%E3%82%8B%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%AF%E3%81%BE%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F">かつて、私は3DSに内蔵されていたとあるゲームにはまっていた。</h3>
+<h3 id="%E3%81%9D%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AF%E3%81%84%E3%82%8F%E3%82%86%E3%82%8B%E7%A7%BB%E5%8B%95%E3%81%97%E3%81%AA%E3%81%84%E4%B8%80%E4%BA%BA%E7%A7%B0%E8%A6%96%E7%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%82%E3%81%A3%E3%81%9F">そのゲームはいわゆる「移動しない一人称視点シューティングゲーム」であった。</h3>
+<h3 id="%E7%A7%81%E3%81%AF%E3%81%9D%E3%81%AE%E7%8F%8D%E3%81%97%E3%81%84%E3%82%B2%E3%83%BC%E3%83%A0%E6%80%A7%E3%81%AB%E6%83%B9%E3%81%8B%E3%82%8C%E4%BD%95%E5%BA%A6%E3%82%82%E3%81%9D%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%92%E9%81%8A%E3%82%93%E3%81%A0">私はその珍しいゲーム性に惹かれ、何度もそのゲームを遊んだ。</h3>
+<h3 id="%E3%82%84%E3%81%8C%E3%81%A6%E7%A7%81%E3%81%AF%E3%81%9D%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%92%E3%83%AA%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%81%97%E3%81%A6%E3%81%A8%E3%81%82%E3%82%8B%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F">やがて、私はそのゲームをリスペクトしてとあるゲームを作った。</h3>
+<h3 id="%E3%81%9D%E3%82%8C%E3%81%8C%E4%BB%8A%E5%9B%9E%E8%A7%A3%E8%AA%AC%E3%81%99%E3%82%8B%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0shooting-of-the-box%E3%81%A7%E3%81%82%E3%82%8B">それが今回解説する自作ゲーム、「Shooting of the Box」である。</h3>
+<h3 id="%E3%81%A8%E3%81%84%E3%81%86%E3%82%8F%E3%81%91%E3%81%A7%E3%81%BE%E3%81%9A%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%8B%E3%82%92%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8A%E3%81%BE%E3%81%A8%E3%82%81%E3%81%9F%E5%8B%95%E7%94%BB%E3%82%92%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%84%E3%81%9F%E3%81%84">というわけで、まずはどんなゲームかをざっくりまとめた動画を見てもらいたい。</h3>
+<br />
+<h3 id="%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9%E3%82%92%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8A%E3%81%BE%E3%81%A8%E3%82%81%E3%81%9F%E5%8B%95%E7%94%BB%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF"><a href="https://youtu.be/8AWr5fmJp0k">ゲーム内容をざっくりまとめた動画のリンク</a></h3>
+<br />
+<p><img src="img/titledasai.png" alt="図１"></p>
+<h3 id="%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E7%94%BB%E9%9D%A2%E8%AB%B8%E3%81%99%E3%81%93%E3%81%97%E3%83%80%E3%82%B5%E3%81%84%E3%81%AE%E3%81%AF%E3%81%95%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E3%82%8B%E3%81%86%E3%81%88%E3%81%A7%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E8%A7%A3%E8%AA%AC%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E6%80%9D%E3%81%86">…タイトル画面諸々すこしダサいのはさておき、これからこのゲームを作るうえでこだわったポイントを解説しようと思う。</h3>
+<br />
+<p><a id="anchor2"></a></p>
+<h1 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%81%9D%E3%81%AE1%E9%96%A2%E6%95%B0%E3%82%92%E7%94%A8%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E5%AE%9F%E7%8F%BE%E3%81%97%E3%81%9F%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E4%BF%AE%E6%AD%A3%E3%81%AE%E3%81%9F%E3%82%84%E3%81%99%E3%81%95">こだわりポイントその1:関数を用いることで実現したステージ修正のたやすさ</h1>
+<h3 id="%E3%81%BE%E3%81%9A%E3%81%AF%E3%81%93%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%A6%8B%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A0%E3%81%8D%E3%81%9F%E3%81%84">まずはこのコードを見ていただきたい。</h3>
+<p>c_enen0-&gt;Toujou(ENEACT_1_1,ENERAD_1_1,ENEKYORI_1_1,ENEKOUDO_1_1,ENESOKUX,ENESOKUY);</p>
+<h3 id="%E3%81%93%E3%82%8C%E3%81%AF%E6%95%B5%E3%82%92%E3%81%82%E3%82%89%E3%81%8B%E3%81%98%E3%82%81%E5%A4%89%E6%95%B0%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E4%BD%8D%E7%BD%AE%E3%81%AB%E5%87%BA%E7%8F%BE%E3%81%95%E3%81%9B%E4%BB%BB%E6%84%8F%E3%81%AE%E8%A1%8C%E5%8B%95%E3%82%92%E3%81%95%E3%81%9B%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A7%E3%81%82%E3%82%8B">これは、敵をあらかじめ変数で指定した位置に出現させ、任意の行動をさせることができるコードである。</h3>
+<h3 id="%E3%81%9D%E3%81%86%E3%81%93%E3%81%AE%E4%B8%80%E8%A1%8C%E3%81%A8%E3%81%84%E3%81%8F%E3%81%A4%E3%81%8B%E3%81%AE%E5%A4%89%E6%95%B0%E3%82%92%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E4%B8%8A%E8%A8%98%E3%81%AE%E8%A4%87%E9%9B%91%E3%81%AA%E5%8B%95%E4%BD%9C%E3%82%92%E8%A1%8C%E3%81%88%E3%82%8B%E3%81%AE%E3%81%A0">そう、この一行といくつかの変数を用意するだけで上記の複雑な動作を行えるのだ。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E5%87%A6%E7%90%86%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8B%E3%81%AB%E3%81%82%E3%81%9F%E3%81%A3%E3%81%A6%E3%81%82%E3%82%89%E3%81%8B%E3%81%98%E3%82%81%E3%81%9D%E3%82%8C%E3%82%89%E3%81%AE%E5%8B%95%E4%BD%9C%E3%82%92%E8%A1%8C%E3%81%88%E3%82%8B%E9%96%A2%E6%95%B0%E3%82%92%E6%95%B5%E3%81%AE%E5%87%A6%E7%90%86%E3%82%92%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%83%98%E3%83%83%E3%83%80%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%85%E3%81%AB%E4%BD%9C%E3%82%8A%E3%81%9D%E3%82%8C%E3%82%92%E4%BB%96%E3%81%AEcpp%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%8B%E3%82%89%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%9F">この処理を実現するにあたってあらかじめそれらの動作を行える関数を敵の処理を書いているヘッダファイル内に作り、それを他のcppファイルから呼び出すことができるようにした。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AF%E5%80%8B%E4%BA%BA%E8%A3%BD%E4%BD%9C%E3%81%A7%E3%81%AF%E3%81%82%E3%82%8B%E3%81%8C%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%97%E3%83%A9%E3%83%B3%E3%83%8A%E3%83%BC%E3%81%8C%E3%81%84%E3%81%9F%E6%99%82%E3%81%AB%E5%AE%B9%E6%98%93%E3%81%8F%E4%BF%AE%E6%AD%A3%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AA%E8%A8%AD%E8%A8%88%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A0">このゲームは個人製作ではあるが、ゲームプランナーがいた時に容易く修正できるような設計にしているのだ。</h3>
+<br />
+<p><a id="anchor3"></a></p>
+<h1 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%882%E6%95%B5%E3%81%AE%E8%A6%8B%E9%80%83%E3%81%97%E3%82%92%E9%98%B2%E3%81%90ui">こだわりポイント2:敵の見逃しを防ぐUI</h1>
+<br />
+<h3 id="%E7%A7%81%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E6%AC%A1%E3%81%AE%E3%82%88%E3%81%86%E3%81%AAui%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">私のゲームでは次のようなUIを実装している</h3>
+<p><img src="img/UI.png" alt="図１"></p>
+<h3 id="%E3%81%93%E3%81%93%E3%81%A7%E6%B3%A8%E7%9B%AE%E3%81%97%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A0%E3%81%8D%E3%81%9F%E3%81%84%E3%81%AE%E3%81%AF%E5%8F%B3%E7%AB%AF%E3%81%AE%E9%BB%84%E8%89%B2%E3%81%A8%E9%BB%92%E3%81%AEui%E3%81%A7%E3%81%82%E3%82%8B">ここで注目していただきたいのは右端の黄色と黒のUIである。</h3>
+<h3 id="%E3%81%93%E3%82%8C%E3%81%AF%E6%95%B5%E3%81%8C%E8%87%AA%E5%88%86%E3%81%AE%E8%A6%96%E7%95%8C%E5%A4%96%E3%81%AE%E5%8F%B3%E5%81%B4%E3%81%AB%E3%81%84%E3%82%8B%E3%81%A8%E3%81%84%E3%81%86%E3%81%93%E3%81%A8%E3%82%92%E8%A1%A8%E3%81%99ui%E3%81%A7%E3%81%82%E3%82%8B">これは、敵が自分の視界外の右側にいるということを表すUIである。</h3>
+<h3 id="%E3%81%93%E3%81%AEui%E3%81%AE%E5%AE%9F%E8%A3%85%E3%81%AE%E3%81%9F%E3%82%81%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E6%95%B5%E3%81%AF%E5%B0%91%E3%81%97%E7%89%B9%E6%AE%8A%E3%81%AA%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">このUIの実装のため、このゲームにおける敵は少し特殊なコードで動かしている。</h3>
+<pre><code>    const float PAI = 3.1415
+
+    m_enowpos.z = cos(m_zrad * (PAI / 180)) * m_distance;
+	m_enowpos.x = sin(m_zrad * (PAI / 180)) * m_distance;
+</code></pre>
+<h3 id="%E3%81%BE%E3%81%9A%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E5%A4%89%E6%95%B0%E7%BE%A4%E3%81%AE%E6%84%8F%E5%91%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%A0%E3%81%8Cpai%E3%81%AF%E5%86%86%E5%91%A8%E7%8E%87mzrad%E3%81%AF%E6%95%B5%E3%82%AD%E3%83%A3%E3%83%A9%E3%81%8Cz%E8%BB%B8%E3%82%92%E6%AD%A3%E9%9D%A2%E3%81%A8%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E4%BD%95%E5%BA%A6%E3%81%AE%E8%A7%92%E5%BA%A6%E3%81%AB%E3%81%84%E3%82%8B%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E3%82%92%E8%A1%A8%E3%81%97%E3%81%9F%E6%95%B0mdistance%E3%81%AF%E6%95%B5%E3%82%AD%E3%83%A3%E3%83%A9%E3%81%A8%E4%B8%BB%E4%BA%BA%E5%85%AC%E3%81%AE%E7%9B%B4%E7%B7%9A%E8%B7%9D%E9%9B%A2%E3%82%92%E8%A1%A8%E3%81%97%E3%81%9F%E6%95%B0%E3%81%A7%E3%81%82%E3%82%8B">まず、使用している変数群の意味についてだがPAIは円周率、m_zradは敵キャラがZ+軸を正面としたときに何度の角度にいるかどうかを表した数、m_distanceは敵キャラと主人公の直線距離を表した数である。</h3>
+<h3 id="%E6%9C%AC%E6%9D%A5%E3%81%93%E3%81%AE%E5%BC%8F%E3%81%AF%EF%BC%92d%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%8A%E3%83%8A%E3%83%A1%E7%A7%BB%E5%8B%95%E3%81%AE%E5%AE%9F%E8%A3%85%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E5%BC%8F%E3%81%A0%E3%81%8C%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E4%B8%BB%E4%BA%BA%E5%85%AC%E3%81%AF%E5%BA%A7%E6%A8%99%E7%A7%BB%E5%8B%95%E3%82%92%E3%81%84%E3%81%A3%E3%81%95%E3%81%84%E8%A1%8C%E3%82%8F%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%93%E3%81%AE%E5%BC%8F%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E6%95%B5%E3%82%92%E7%A7%BB%E5%8B%95%E3%81%95%E3%81%9B%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E5%AE%B9%E6%98%93%E3%81%AB%E5%8F%AF%E8%83%BD%E3%81%AA%E3%81%AE%E3%81%A7%E3%81%82%E3%82%8B">本来、この式は２Dにおけるナナメ移動の実装のために用いられる式だが、このゲームでは主人公は座標移動をいっさい行わないためこの式を使って敵を移動させることが容易に可能なのである。</h3>
+<h3 id="%E6%95%B5%E3%81%AE%E8%A7%92%E5%BA%A6%E3%82%92%E5%A4%89%E3%81%88%E3%81%9F%E3%81%84%E6%99%82%E3%81%AFmzrad%E3%82%92%E6%95%B5%E3%81%A8%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E8%B7%9D%E9%9B%A2%E3%82%92%E5%A4%89%E3%81%88%E3%81%9F%E3%81%84%E6%99%82%E3%81%AFmdistance%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E5%AE%B9%E6%98%93%E3%81%8B%E3%81%A4%E6%80%9D%E3%81%84%E9%80%9A%E3%82%8A%E3%81%AB%E6%95%B5%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E5%8F%AF%E8%83%BD%E3%81%AA%E3%81%AE%E3%81%A0">敵の角度を変えたい時はm_zradを、敵とプレイヤーの距離を変えたい時はm_distanceを変えることで容易かつ思い通りに敵を動かすことが可能なのだ。</h3>
+<h3 id="%E3%81%95%E3%81%A6%E6%9C%AC%E9%A1%8C%E3%81%AEui%E8%A1%A8%E7%A4%BA%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%A0%E3%81%8C%E7%A7%81%E3%81%AF%E4%B8%8A%E8%A8%98%E3%81%AE%E5%BC%8F%E3%81%AE%E5%89%AF%E7%94%A3%E7%89%A9%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F">さて、本題のUI表示の仕組みについてだが、私は上記の式の副産物を利用して実装した。</h3>
+<h3 id="%E3%81%BE%E3%81%9A%E3%81%AF%E4%B8%8B%E8%A8%98%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%A6%8B%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A0%E3%81%8D%E3%81%9F%E3%81%84">まずは下記のコードを見ていただきたい。</h3>
+<pre><code>//Z+軸正面にプレイヤーがいた時の敵とZ+軸との角度を求める
+float dairi = m_zrad - c_oresiten-&gt;Zrad;
+
+
+
+//視界外かどうかのif
+if (dairi&gt;SIYAKAKU||dairi&lt;-SIYAKAKU)
+{
+	//0.0f &lt; dairi &lt;= 180.0f or -180.0f &gt; dairi &gt; -360.0f(右に敵がいたとき)
+	if (dairi &lt;= 180.0f&amp;&amp;dairi &gt; 0.0f || dairi &lt; -180.0f&amp;&amp;dairi &gt; -360.0f)
+	{
+		c_makeui-&gt;m_keiR = 1;
+	}
+	//180.0f &lt; dairi &lt; 360.0f or 0.0f &gt; dairi &gt;= -180.0f (左に敵がいたとき)
+	if (dairi &gt; 180.0f &amp;&amp; dairi &lt; 360.0f || dairi &gt;= -180.0f &amp;&amp; dairi &lt; 0.0f)
+	{
+		c_makeui-&gt;m_keiL = 1;
+	}
+}
+</code></pre>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A7%E3%81%AF%E3%81%BE%E3%81%9A%E6%9C%80%E5%88%9D%E3%81%ABz%E8%BB%B8%E6%AD%A3%E9%9D%A2%E3%81%AB%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E3%81%84%E3%81%9F%E6%99%82%E3%81%AE%E6%95%B5%E3%81%A8z%E8%BB%B8%E3%81%A8%E3%81%AE%E8%A7%92%E5%BA%A6%E3%82%92%E6%B1%82%E3%82%81%E3%81%A6%E3%81%84%E3%82%8B">このコードではまず最初にZ+軸正面にプレイヤーがいた時の敵とZ+軸との角度を求めている。</h3>
+<h3 id="%E3%81%AA%E3%81%9C%E3%81%93%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%81%93%E3%81%A8%E3%82%92%E3%81%99%E3%82%8B%E3%81%8B%E3%81%A8%E3%81%84%E3%81%86%E3%81%A8%E3%81%93%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A7%E3%81%AF%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E5%90%91%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%81%8Cz%E8%BB%B8%E3%81%A8%E5%90%8C%E3%81%98%E5%90%91%E3%81%8D%E3%81%A8%E3%81%84%E3%81%86%E9%81%8E%E7%A8%8B%E3%81%A7%E5%87%A6%E7%90%86%E3%82%92%E9%80%B2%E3%82%81%E3%81%A6%E3%81%84%E3%81%8F%E3%81%8B%E3%82%89%E3%81%A7%E3%81%82%E3%82%8B">なぜこのようなことをするかというと、このコードではプレイヤーが向いているベクトルがZ+軸と同じ向きという過程で処理を進めていくからである。</h3>
+<h3 id="%E3%81%9D%E3%81%AE%E3%81%9F%E3%82%81%E6%95%B5%E3%81%AEz%E8%BB%B8%E3%81%8B%E3%82%89%E3%81%AE%E8%A7%92%E5%BA%A6%E3%82%82%E3%81%9D%E3%82%8C%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E5%A4%89%E3%81%88%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%84%E3%81%91%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A0">そのため、敵のz+軸からの角度もそれに合わせて変えなければいけないのだ。</h3>
+<h3 id="%E6%AC%A1%E3%81%ABif%E6%96%87%E3%82%92%E7%94%A8%E3%81%84%E3%81%A6%E5%85%88%E3%81%BB%E3%81%A9%E6%B1%82%E3%82%81%E3%81%9F%E6%B1%82%E3%82%81%E3%81%9F%E8%A7%92%E5%BA%A6%E3%81%8C%E8%A6%96%E9%87%8E%E8%A7%92%E3%81%A0%E3%81%A8%E5%AE%9A%E7%BE%A9%E3%81%95%E3%82%8C%E3%81%9F%E5%AE%9A%E6%95%B0%E3%82%92%E8%B6%85%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B">次にif文を用いて先ほど求めた求めた角度が視野角だと定義された定数を超えているかどうかを確認する。</h3>
+<h3 id="%E7%A7%81%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E3%81%93%E3%81%AE%E4%B8%80%E6%96%87%E3%81%AE%E3%81%BF%E3%81%A7%E6%95%B5%E3%81%8C%E8%A6%96%E9%87%8E%E8%A7%92%E5%A4%96%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E3%82%92%E5%88%A4%E6%96%AD%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A0">私のゲームではこの一文のみで敵が視野角外かどうかを判断しているのだ。</h3>
+<h3 id="%E3%81%9D%E3%81%97%E3%81%A6%E6%95%B5%E3%81%8C%E5%8F%B3%E5%AF%84%E3%82%8A%E3%81%AB%E3%81%84%E3%82%8B%E3%81%8B%E5%B7%A6%E5%AF%84%E3%82%8A%E3%81%AB%E3%81%84%E3%82%8B%E3%81%8B%E3%82%92if%E6%96%87%E3%81%A7%E3%81%95%E3%82%89%E3%81%AB%E5%88%A4%E5%AE%9A%E3%81%97%E3%81%9D%E3%82%8C%E3%81%AB%E5%BF%9C%E3%81%98%E3%81%9Fui%E3%81%AE%E8%A1%A8%E7%A4%BA%E5%87%A6%E7%90%86%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A0">そして、敵が右寄りにいるか左寄りにいるかをif文でさらに判定し、それに応じたUIの表示処理をしているのだ。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E4%B8%80%E9%83%A8%E3%81%AE%E5%87%A6%E7%90%86%E3%82%92%E7%B0%A1%E5%8D%98%E3%81%AB%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%88%B6%E4%BD%9C%E3%81%AB%E9%96%A2%E3%82%8F%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%84%E5%A4%96%E9%83%A8%E3%81%AE%E4%BA%BA%E9%96%93%E3%81%A7%E3%82%82%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%BE%AE%E8%AA%BF%E6%95%B4%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B">このように、このゲームでは一部の処理を簡単にすることでプログラム制作に関わってない外部の人間でもゲーム内データの微調整ができるようになっている。</h3>
+<br />
+<p><a id="anchor4"></a></p>
+<h1 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%883%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AB%E9%85%8D%E6%85%AE%E3%81%97%E3%81%9F%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%87%E3%82%B6%E3%82%84%E6%93%8D%E4%BD%9C%E3%83%9C%E3%82%BF%E3%83%B3%E6%95%B0">こだわりポイント3：ユーザーに配慮したキャラデザや操作ボタン数</h1>
+<br />
+<h3 id="%E7%A7%81%E3%81%AF%E8%87%AA%E5%88%86%E3%81%8C%E4%BD%9C%E3%82%8B%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%8A%E3%81%84%E3%81%A6%E9%81%8A%E3%81%B3%E3%82%84%E3%81%99%E3%81%84%E9%9B%A3%E6%98%93%E5%BA%A6%E3%81%AB%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E8%89%B2%E3%81%A8%E5%B7%A5%E5%A4%AB%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">私は自分が作るゲームにおいて遊びやすい難易度にするために色々と工夫をしている。</h3>
+<h3 id="%E4%BB%8A%E3%81%8B%E3%82%89%E3%81%9D%E3%81%AE%E4%BE%8B%E3%82%92%E3%81%84%E3%81%8F%E3%81%A4%E3%81%8B%E3%81%82%E3%81%92%E3%82%88%E3%81%86">今からその例をいくつかあげよう。</h3>
+<h3 id="%E7%A7%81%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE3d%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B">私のゲームではすべての3Dモデルを自分で作っている。</h3>
+<h3 id="%E3%81%9D%E3%81%97%E3%81%A6%E6%95%B5%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%92%E4%B8%8B%E3%81%AE%E5%9B%B3%EF%BC%91%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%82%82%E3%81%AE%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">そして、敵のデザインを下の図１のようなものにしている。</h3>
+<p><img src="img/poppo.png" alt="図１"></p>
+<h3 id="%E4%B8%80%E8%A6%8B%E7%B2%97%E6%9C%AB%E3%81%AB%E8%A6%8B%E3%81%88%E3%82%8B%E3%81%93%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%81%A0%E3%81%8C%E5%AE%9F%E3%81%AF%E3%81%93%E3%82%8C%E3%81%AB%E3%81%AF%E3%81%8D%E3%81%A1%E3%82%93%E3%81%A8%E6%84%8F%E5%91%B3%E3%81%8C%E3%81%82%E3%82%8B">一見、粗末に見えるこのデザインだが、実はこれにはきちんと意味がある。</h3>
+<h3 id="%E3%81%BE%E3%81%9A%E4%B8%80%E9%A0%AD%E8%BA%AB%E3%81%AB%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%A0%E3%81%8C%E3%81%93%E3%82%8C%E3%81%AF%E5%BC%BE%E3%82%92%E6%92%83%E3%81%A4%E6%99%82%E3%81%AB%E6%95%B5%E3%81%AB%E7%8B%99%E3%81%84%E3%82%92%E4%BB%98%E3%81%91%E3%82%84%E3%81%99%E3%81%8F%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%A7%E3%81%82%E3%82%8B">まず、一頭身にした理由についてだが、これは弾を撃つ時に敵に狙いを付けやすくするためである。</h3>
+<h3 id="%E6%AC%A1%E3%81%AB%E8%85%95%E3%81%AE%E8%B5%A4%E3%81%84%E6%AD%A6%E5%99%A8%E3%81%AF%E3%81%93%E3%81%AE%E6%95%B5%E3%81%8C%E7%AA%81%E6%92%83%E3%81%99%E3%82%8B%E6%99%82%E3%81%AB%E3%81%93%E3%81%AE%E3%81%BE%E3%81%BE%E6%BF%80%E7%AA%81%E3%81%99%E3%82%8B%E3%81%A8%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92%E3%81%8F%E3%82%89%E3%81%86%E3%81%A8%E3%81%84%E3%81%86%E3%81%93%E3%81%A8%E3%82%92%E8%AA%AC%E6%98%8E%E3%82%92%E3%81%A4%E3%81%91%E3%81%9A%E3%81%AB%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AB%E7%90%86%E8%A7%A3%E3%81%95%E3%81%9B%E3%82%8B%E3%81%9F%E3%82%81%E3%81%A7%E3%81%82%E3%82%8B">次に、腕の赤い武器はこの敵が突撃する時に「このまま激突するとダメージをくらう」ということを説明をつけずにプレイヤーに理解させるためである。</h3>
+<h3 id="%E3%81%95%E3%82%89%E3%81%AB%E8%85%95%E3%82%92%E3%81%A4%E3%81%91%E3%81%9F%E7%90%86%E7%94%B1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%A0%E3%81%8C%E3%81%93%E3%82%8C%E3%81%AF%E5%87%BA%E7%8F%BE%E3%81%97%E3%81%9F%E6%99%82%E3%81%AB%E8%85%95%E3%82%92%E5%A4%A7%E3%81%92%E3%81%95%E3%81%AB%E5%8B%95%E3%81%8B%E3%81%99%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%81%95%E3%81%9B%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E6%95%B5%E3%82%92%E8%A6%8B%E3%81%A4%E3%81%91%E3%82%84%E3%81%99%E3%81%8F%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%A7%E3%81%82%E3%82%8B">さらに、腕をつけた理由についてだが、これは出現した時に腕を大げさに動かすモーションをさせることでプレイヤーが敵を見つけやすくするためである。</h3>
+<h3 id="%E3%82%82%E3%81%86%E4%B8%80%E3%81%A4%E3%82%8F%E3%81%9F%E3%81%97%E3%81%8C%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%AE%E3%81%93%E3%81%A8%E8%80%83%E3%81%88%E3%81%A6%E8%A8%AD%E8%A8%88%E3%81%97%E3%81%9F%E8%A6%81%E7%B4%A0%E3%81%8C%E3%81%82%E3%82%8B">もう一つ、わたしがプレイヤーのこと考えて設計した要素がある。</h3>
+<h3 id="%E3%81%9D%E3%82%8C%E3%81%AF%E6%93%8D%E4%BD%9C%E3%83%9C%E3%82%BF%E3%83%B3%E6%95%B0%E3%81%A7%E3%81%82%E3%82%8B">それは、操作ボタン数である。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AFa%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%BC%BE%E7%99%BA%E5%B0%84l%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%81%A7%E8%A6%96%E7%95%8C%E5%9B%9E%E8%BB%A2%E7%AC%AC%E4%B8%80l%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89l%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%99%E3%82%8B%E3%81%A8%E7%B4%A0%E6%97%A9%E3%81%8F%E8%A6%96%E7%95%8C%E3%82%92%E5%9B%9E%E8%BB%A2%E3%81%A7%E3%81%8D%E3%82%8B">このゲームではAボタンで弾発射、Lスティックで視界回転、第一Lボタンを押しながらLスティックを操作すると素早く視界を回転できる。</h3>
+<h3 id="%E4%B8%8A%E8%A8%98%E3%81%AE%E8%AA%AC%E6%98%8E%E3%82%92%E8%A6%8B%E3%81%A6%E3%82%8F%E3%81%8B%E3%82%8B%E3%81%A8%E3%81%8A%E3%82%8A%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E3%83%97%E3%83%AC%E3%82%A4%E4%B8%AD%E3%81%AF%E3%83%9C%E3%82%BF%E3%83%B3%EF%BC%92%E3%81%A4%E3%81%A8%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%EF%BC%91%E3%81%A4%E3%81%A0%E3%81%91%E3%81%97%E3%81%8B%E6%8A%BC%E3%81%99%E5%BF%85%E8%A6%81%E3%81%8C%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A0">上記の説明を見てわかるとおり、このゲームではプレイ中はボタン２つとスティック１つだけしか押す必要がないのだ。</h3>
+<h3 id="%E3%81%93%E3%82%8C%E3%81%AF%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E3%81%99%E3%81%90%E3%81%AB%E6%93%8D%E4%BD%9C%E3%81%AB%E3%81%AA%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A7%E3%81%82%E3%82%8B">これは、プレイヤーがすぐに操作になれるようにするための設計である。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E7%A7%81%E3%81%AF%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%87%E3%82%B6%E3%82%84%E6%93%8D%E4%BD%9C%E3%83%9C%E3%82%BF%E3%83%B3%E6%95%B0%E3%81%AB%E3%81%8A%E3%81%84%E3%81%A6%E7%90%86%E4%B8%8D%E5%B0%BD%E8%A6%81%E7%B4%A0%E3%82%92%E5%B0%91%E3%81%97%E3%81%A7%E3%82%82%E3%81%AA%E3%81%8F%E3%81%97%E3%81%A6%E3%82%88%E3%82%8A%E5%A4%9A%E3%81%8F%E3%81%AE%E4%BA%BA%E3%81%8C%E9%81%8A%E3%81%B3%E3%82%84%E3%81%99%E3%81%8F%E3%81%AA%E3%82%8B%E3%82%88%E3%81%86%E3%81%AA%E5%B7%A5%E5%A4%AB%E3%82%92%E6%96%BD%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">このように、私はキャラデザや操作ボタン数において理不尽要素を少しでもなくしてより多くの人が遊びやすくなるような工夫を施している。</h3>
+<br />
+<p><a id="anchor5"></a></p>
+<h1 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%81%9D%E3%81%AE4%E8%87%AA%E4%BD%9C%E6%A5%BD%E6%9B%B2%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%AD%E3%81%AE%EF%BD%82%EF%BD%87%EF%BD%8D%E5%A4%89%E6%9B%B4">こだわりポイントその4:自作楽曲を用いたゲーム中のＢＧＭ変更</h1>
+<br />
+<h3 id="%E7%A7%81%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%EF%BD%82%EF%BD%87%EF%BD%8D%E3%81%AF%E3%81%99%E3%81%B9%E3%81%A6%E7%A7%81%E3%81%AE%E8%87%AA%E4%BD%9C%E3%81%A7%E3%81%82%E3%82%8B">私のゲームで使用されているＢＧＭはすべて私の自作である。</h3>
+<h3 id="%E3%81%9D%E3%82%8C%E3%81%AB%E4%BC%B4%E3%81%84%E7%A7%81%E3%81%AF%E3%82%B2%E3%83%BC%E3%83%A0%EF%BD%82%EF%BD%87%EF%BD%8D%E3%81%AE%E4%BD%BF%E7%94%A8%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AB%E3%82%82%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F">それに伴い、私はゲームＢＧＭの使用タイミングにもこだわった。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%AF%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%AE%EF%BD%82%EF%BD%87%EF%BD%8D%E3%81%8C%EF%BC%93%E3%81%A4%E5%AD%98%E5%9C%A8%E3%81%99%E3%82%8B">このゲームにはステージのＢＧＭが３つ存在する。</h3>
+<h3 id="%E3%81%9D%E3%82%8C%E3%82%89%E3%81%AF%E3%81%99%E3%81%B9%E3%81%A6%E5%90%8C%E3%81%98%E6%97%8B%E5%BE%8B%E3%81%A7%E4%BD%9C%E3%82%89%E3%82%8C%E3%81%A6%E3%81%8A%E3%82%8A%E3%81%84%E3%82%8F%E3%82%86%E3%82%8B%E5%B7%AE%E5%88%86%E3%81%A8%E3%81%84%E3%81%86%E3%82%82%E3%81%AE%E3%81%A7%E3%81%82%E3%82%8B">それらはすべて同じ旋律で作られており、いわゆる差分というものである。</h3>
+<h3 id="3%E3%81%A4%E3%81%AEbgm%E3%81%AF%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E9%81%95%E3%81%86bpm%E6%9B%B2%E3%81%AE%E9%80%9F%E3%81%95%E3%81%A7%E4%BD%9C%E3%82%89%E3%82%8C%E3%81%A6%E3%81%8A%E3%82%8A%E6%9B%B2%E3%81%AE%E9%80%9F%E3%81%95%E3%81%8C%E6%97%A9%E3%81%84bgm%E3%81%BB%E3%81%A9%E5%A4%9A%E3%81%8F%E3%81%AE%E9%9F%B3%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B">3つのBGMはそれぞれ違うBPM（曲の速さ)で作られており、曲の速さが早いBGMほど多くの音を使用している。</h3>
+<h3 id="%E7%A7%81%E3%81%AF%E3%81%93%E3%82%8C%E3%82%92%E7%94%A8%E3%81%84%E3%81%A6%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%AE%E9%80%B2%E8%A1%8C%E5%85%B7%E5%90%88%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6bgm%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%AB%E3%81%97%E3%81%9F">私はこれを用いてステージの進行具合によってBGMを変えることにした。</h3>
+<h3 id="%E6%9C%80%E5%88%9D%E3%81%AFbpm%E3%81%AE%E4%BD%8E%E3%81%84%E5%B7%AE%E5%88%86%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E9%9B%B0%E5%9B%B2%E6%B0%97%E3%81%AB%E6%85%A3%E3%82%8C%E3%81%95%E3%81%9B%E3%81%82%E3%82%8B%E3%81%A6%E3%81%84%E3%81%A9%E9%80%B2%E3%82%93%E3%81%A7%E6%95%B5%E3%81%8C%E5%A4%9A%E3%81%8F%E5%BC%B7%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F%E3%81%A8%E3%81%93%E3%82%8D%E3%81%A7bpm%E3%81%8C%E9%AB%98%E3%81%84%E5%B7%AE%E5%88%86%E3%82%92%E6%B5%81%E3%81%99%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%9F">最初はBPMの低い差分を使用してゲームの雰囲気に慣れさせ、あるていど進んで敵が多く強くなってきたところでBPMが高い差分を流すようにした。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E6%BC%94%E5%87%BA%E3%81%AF%E3%81%99%E3%81%A7%E3%81%AB%E7%94%A8%E6%84%8F%E3%81%95%E3%82%8C%E3%81%9Fbgm%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%A7%E3%81%AF%E5%B0%91%E3%81%97%E9%9B%A3%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B">このような演出はすでに用意されたBGMを使うのでは少し難しくなる。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E3%81%93%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%AF%E3%81%A0%E3%81%84%E3%81%9F%E3%81%84%E3%81%AE%E7%B4%A0%E6%9D%90%E3%81%8C%E8%87%AA%E4%BD%9C%E3%81%A7%E3%81%82%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E6%B4%BB%E3%81%8B%E3%81%97%E3%81%9F%E6%BC%94%E5%87%BA%E3%82%92%E5%8F%96%E3%82%8A%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A0">このように、このゲームではだいたいの素材が自作であることを活かした演出を取り入れているのだ。</h3>
+<br />
+<p><a id="anchor6"></a></p>
+<h1 id="%E3%81%BE%E3%81%A8%E3%82%81">まとめ</h1>
+<br />
+<h3 id="%E4%BB%A5%E4%B8%8A%E3%81%A7%E8%87%AA%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0shooting-of-the-box%E3%81%AE%E7%B4%B9%E4%BB%8B%E3%82%92%E7%B5%82%E3%82%8F%E3%82%8B">以上で自作ゲーム「Shooting of the Box」の紹介を終わる。</h3>
+<h3 id="%E3%81%93%E3%81%AE%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A7%E7%A7%81%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E5%86%85%E5%AE%B9%E3%82%84%E6%9C%AC%E8%B3%AA%E3%81%8C%E4%BC%9D%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%AA%E3%82%89%E3%81%AA%E3%81%AB%E3%82%88%E3%82%8A%E3%81%A7%E3%81%82%E3%82%8B">このポートフォリオを読んで私のゲームの内容や本質が伝わったならなによりである。</h3>
+
+</body>
+</html>
